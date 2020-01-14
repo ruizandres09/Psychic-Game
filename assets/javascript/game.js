@@ -25,6 +25,7 @@ var userguessed=[]
             if (computerletter === userguess) {
                 document.getElementById("win").innerHTML = win++;
                 document.getElementById("remainingGuesses").innerHTML = guessuesleft--;
+                userguessed.push(userguess);
                 document.getElementById("guessed").innerHTML = userguess;
                 
             }
@@ -32,7 +33,8 @@ var userguessed=[]
             else if (computerletter !== userguess) {
                 document.getElementById("losing").innerHTML = lose++;
                 document.getElementById("remainingGuesses").innerHTML = guessuesleft--;
-                document.getElementById("guessed").innerHTML = userguess;
+                userguessed.push(userguess);
+                document.getElementById("guessed").innerHTML = userguessed;
 
                 
             }

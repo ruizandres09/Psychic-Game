@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Psychic Game</title>
+
+    <script src="assets/javascript/game.js"></script>
+
 </head>
 <body>
 
-    <!-- Guess what letter I'm thinking of 
+ <h1>Guess what letter I'm thinking of </h1>
 
-Wins: (# of times the user has guessed the letter correctly)
+<p>Wins: <span id="win">0</span></p> <!--(# of times the user has guessed the letter correctly)-->
 
-Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
+<p>Losses: <span id="losing">0</span></p><!-- (# of times the user has failed to guess the letter correctly after exhausting all guesses)-->
 
-Guesses Left: (# of guesses left. This will update)
+<p>Guesses Left: <span id="remainingGuesses">10</span></p><!-- (# of guesses left. This will update)-->
 
-Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
+<p>Your Guesses So Far: <span id="guessed"></span></p> <!--(the specific letters that the user typed. Display these until the user either wins or loses.)-->
 
-When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
+<!-- When the player wins, increase the Wins counter and start the game over again (without refreshing the page). -->
 
-When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
-  -->  
+<!-- When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).  -->
 
 <!-- PSUEDO_CODE 
 1.I would have to create an event listener to capture the user key input. 
@@ -32,9 +34,5 @@ When the player loses, increase the Losses counter and restart the game without 
 6.Iin the for loop would have to increase the number of wins if the, loses
 7. I would also have display the array of letters that the user has already input.
 -->
-
-
-
-
 </body>
 </html>

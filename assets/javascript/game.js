@@ -12,30 +12,35 @@ function generateRandomInteger(min, max) {
 var win = 0
 var lose = 0
 var guessuesleft = 10
-var userguessed=[]
+var userguessed = []
 
 
 //listening to user key input
-        document.onkeyup = function (event) {
-            userguess=String(event.key)
-            var computerletter = alphabet[generateRandomInteger(0, 25)];
-            console.log(userguess, computerletter)
+document.onkeyup = function (event) {
+    userguess = String(event.key)
+    var computerletter = alphabet[generateRandomInteger(0, 25)];
+    console.log(userguess, computerletter)
 
-            // win
-            if (computerletter === userguess) {
-                document.getElementById("win").innerHTML = win++;
-                document.getElementById("remainingGuesses").innerHTML = guessuesleft--;
-                userguessed.push(userguess);
-                document.getElementById("guessed").innerHTML = userguess;
-                
-            }
-            //  lose
-            else if (computerletter !== userguess) {
-                document.getElementById("losing").innerHTML = lose++;
-                document.getElementById("remainingGuesses").innerHTML = guessuesleft--;
-                userguessed.push(userguess);
-                document.getElementById("guessed").innerHTML = userguessed;
-
-                
-            }
-        }   
+    // win
+    if (computerletter === userguess) {
+        document.getElementById("win").innerHTML = win++;
+        document.getElementById("remainingGuesses").innerHTML = guessuesleft--;
+        userguessed.push(userguess);
+        document.getElementById("guessed").innerHTML = userguess;
+        //reset number of guesses if user wins
+        userguessed=[];
+        guessuesleft=10;
+    }
+    //  lose
+    else if (computerletter !== userguess) {
+        document.getElementById("remainingGuesses").innerHTML = guessuesleft--;
+        userguessed.push(userguess);
+        document.getElementById("guessed").innerHTML = userguessed;
+        // reset if number of guesses were exhausted
+        if (guessuesleft <1) {
+            document.getElementById("losing").innerHTML = lose++;
+            userguessed=[];
+            guessuesleft=10;
+        }
+    }
+}
